@@ -1,10 +1,10 @@
-import React from 'react';
+import * as React from 'react';
 import { Route } from 'react-router-dom';
 
 import Home from './components/Home'
 import About from './components/About'
 
-export default class App extends React.Component {
+export default class App extends React.Component<{}, {}> {
     render() {
         return (
             <div>
