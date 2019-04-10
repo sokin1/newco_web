@@ -1,6 +1,8 @@
 import * as React from 'react';
 
-export default class Home extends React.Component<{}, {}> {
+import './gatePage.scss'
+
+export default class GatePage extends React.Component<{}, {}> {
     render() {
         return (
             <h1>Home</h1>

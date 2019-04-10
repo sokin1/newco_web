@@ -16,14 +16,14 @@ module.exports = {
     module: {
         rules: [
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
-            { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ }
-            // { test: /\.css$/, use: [
-            //     { loader: 'style-loader'},
-            //     { loader: 'css-loader', options: {
-            //         modules: true
-            //     }},
-            //     { loader: 'sass-loader' }
-            // ]}
+            { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
+            { test: /\.scss$/, use: [
+                { loader: 'style-loader'},
+                { loader: 'css-loader', options: {
+                    modules: true
+                }},
+                { loader: 'sass-loader' }
+            ]}
         ]
     },
     plugins: [
