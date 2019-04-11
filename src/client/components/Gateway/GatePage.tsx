@@ -1,44 +1,29 @@
 import * as React from 'react';
-import { connect } from 'react-redux';
 
 import './gatePage.scss'
+import counter from '../../../store/modules/counter';
 
 interface IState {
     count: number;
 }
 
 interface IProps {
-}
-
-const initialState: IState = {
-    count: 0
-}
-
-function mapStateToProps(state: IState=initialState) {
-    return {
-        count: state.count
-    };
+    count: number,
+    onIncrement(): void,
+    onDecrement(): void
 }
 
 class GatePage extends React.Component<IProps, IState> {
-    onInc = () => {
-        this.props.dispatch({ type: 'INC' })
-    }
-
-    onDec = () => {
-        this.props.dispatch({ type: 'DEC' })
-    }
-
     render() {
+        var {count, onIncrement, onDecrement} = this.props
         return (
             <div>
-                <h1>Home</h1>
-                <button onClick={this.onInc}>+</button>
-                { this.props.count }
-                <button onClick={this.onDec}>-</button>
+                <h1>Home {count}</h1>
+                <button onClick={onIncrement}>+</button>
+                <button onClick={onDecrement}>-</button>
             </div>
         )
     }
 }
 
-export default connect(mapStateToProps)(GatePage)
+export default GatePage
