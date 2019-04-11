@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux'
-import counter, { IState } from './counter'
+import counter, { ICounterState } from './counter'
 
 export default combineReducers({
     counter
 })
 
 export interface IStoreState {
-    counter: IState
+    counterState: ICounterState
 }

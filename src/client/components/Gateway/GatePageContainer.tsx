@@ -36,8 +36,8 @@ class GatePageContainer extends React.Component<Props> {
 }
 
 export default connect(
-    ({ counter }: IStoreState) => ({
-        count: counter.count
+    ({ counterState }: IStoreState) => ({
+        count: counterState.count
     }),
     (dispatch) => ({
         CounterActions: bindActionCreators(counterActions, dispatch)

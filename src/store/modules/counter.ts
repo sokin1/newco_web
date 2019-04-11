@@ -8,15 +8,15 @@ export const actionCreators = {
     decrement: createAction(DECREMENT)
 }
 
-export interface IState {
+export interface ICounterState {
     count: number
 }
 
-const initialState: IState = {
+const initialState: ICounterState = {
     count: 0
 }
 
-export default handleActions<IState>(
+export default handleActions<ICounterState>(
     {
         [INCREMENT]: state => ({ count: state.count + 1 }),
         [DECREMENT]: state => ({ count: state.count - 1 }),
