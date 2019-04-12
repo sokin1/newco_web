@@ -3,5 +3,6 @@ export interface ICounterState {
 }
 
 export interface IUserState {
-    user: object
+    user: object,
+    userId: string
 }

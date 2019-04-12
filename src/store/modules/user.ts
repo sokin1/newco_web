@@ -7,7 +7,7 @@ const UPDATEINFO = 'user/UPDATEINFO'
 
 // type CreatePayload = object
 // type RemovePayload = object
-type UpdateInfoPayload = object
+type UpdateInfoPayload = { user: object, userId: string }
 
 export const actionCreators = {
     // create: createAction<CreatePayload>(CREATE),
@@ -16,7 +16,8 @@ export const actionCreators = {
 }
 
 const initialState: IUserState = {
-    user: {}
+    user: { username: 'noname' },
+    userId: "1"
 }
 
 export default handleActions<IUserState>(
@@ -27,9 +28,7 @@ export default handleActions<IUserState>(
         // [REMOVE]: (state, action: Action<RemovePayload>): IUserState => {
         //     return <IUserState> action.payload
         // },
-        [UPDATEINFO]: (state, action: Action<UpdateInfoPayload>): IUserState => {
-            return <IUserState> action.payload
-        }
+        [UPDATEINFO]: (state, action: Action<UpdateInfoPayload>): IUserState => ({ user: action.payload.user, userId: action.payload.userId })
     },
     initialState
 )
