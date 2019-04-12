@@ -1,4 +1,4 @@
-import modules from './modules'
+import modules from '../store/modules'
 import { createStore } from 'redux'
 
 export default function configureStore() {

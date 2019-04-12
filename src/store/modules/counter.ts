@@ -1,4 +1,5 @@
 import { createAction, handleActions } from 'redux-actions'
+import { ICounterState } from '../../types'
 
 const INCREMENT = 'counter/INCREMENT'
 const DECREMENT = 'counter/DECREMENT'
@@ -6,10 +7,6 @@ const DECREMENT = 'counter/DECREMENT'
 export const actionCreators = {
     increment: createAction(INCREMENT),
     decrement: createAction(DECREMENT)
-}
-
-export interface ICounterState {
-    count: number
 }
 
 const initialState: ICounterState = {

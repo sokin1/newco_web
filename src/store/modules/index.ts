@@ -1,6 +1,7 @@
 import { combineReducers } from 'redux'
-import counter, { ICounterState } from './counter'
-import user, { IUserState } from './user'
+import { ICounterState, IUserState } from '../../types'
+import user from '../../store/modules/user'
+import counter from '../../store/modules/counter'
 
 export default combineReducers({
     counter,
@@ -8,6 +9,6 @@ export default combineReducers({
 })
 
 export interface IStoreState {
-    counterState: ICounterState,
-    userState: IUserState
+    counter: ICounterState,
+    user: IUserState
 }

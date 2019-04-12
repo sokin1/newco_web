@@ -3,7 +3,7 @@ import GatePage from './GatePage'
 import { actionCreators as counterActions } from '../../../store/modules/counter'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { IStoreState } from 'store/modules'
+import { IStoreState } from '../../../store/modules'
 
 type Props = {
     count: number;
@@ -36,8 +36,8 @@ class GatePageContainer extends React.Component<Props> {
 }
 
 export default connect(
-    ({ counterState }: IStoreState) => ({
-        count: counterState.count
+    ({ counter }: IStoreState) => ({
+        count: counter.count
     }),
     (dispatch) => ({
         CounterActions: bindActionCreators(counterActions, dispatch)
