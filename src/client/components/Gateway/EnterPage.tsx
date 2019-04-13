@@ -20,7 +20,7 @@ export default class EnterPage extends React.Component<{}, {}> {
                 <form>
                     <h2 style={h2_style}>Log In</h2>
                     <input type="text" name="username" placeholder="Username" />
-                    <input type="password" name="pass" placeholder="Password" />
+                    <input type="password" name="pass" placeholder="Password" /><br /><br />
                     <a href=""><input type="button" value="Log In" /></a><br /><br />
                     <div id="container">
                         <a href="#" style={a_style}>Reset Password</a>
