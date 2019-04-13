@@ -1,5 +1,5 @@
 import * as React from 'react'
-import GatePage from './GatePage'
+import Reduxtest from './Reduxtest'
 import { actionCreators as counterActions } from '../../../store/modules/counter'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
@@ -10,7 +10,7 @@ type Props = {
     CounterActions: typeof counterActions
 }
 
-class GatePageContainer extends React.Component<Props> {
+class ReduxtestContainer extends React.Component<Props> {
     onIncrement = () => {
         const { CounterActions } = this.props
         CounterActions.increment()
@@ -26,7 +26,7 @@ class GatePageContainer extends React.Component<Props> {
         const { count } = this.props
 
         return (
-            <GatePage
+            <Reduxtest
                 onIncrement={onIncrement}
                 onDecrement={onDecrement}
                 count={count}
@@ -42,4 +42,4 @@ export default connect(
     (dispatch) => ({
         CounterActions: bindActionCreators(counterActions, dispatch)
     })
-)(GatePageContainer)
+)(ReduxtestContainer)

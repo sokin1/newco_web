@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import './gatePage.scss'
+import './reduxtest.scss'
 
 type Props = {
     count: number;
@@ -8,7 +8,7 @@ type Props = {
     onDecrement(): void;
 }
 
-const GatePage: React.FunctionComponent<Props> = ({ count, onIncrement, onDecrement }) => (
+const Reduxtest: React.FunctionComponent<Props> = ({ count, onIncrement, onDecrement }) => (
     <div>
         <h1>Home {count}</h1>
         <button onClick={onIncrement}>+</button>
@@ -16,4 +16,4 @@ const GatePage: React.FunctionComponent<Props> = ({ count, onIncrement, onDecrem
     </div>
 )
 
-export default GatePage
+export default Reduxtest

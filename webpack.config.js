@@ -17,13 +17,23 @@ module.exports = {
         rules: [
             { test: /\.tsx?$/, loader: "awesome-typescript-loader" },
             { test: /\.js$/, use: 'babel-loader', exclude: /node_modules/ },
-            { test: /\.scss$/, use: [
-                { loader: 'style-loader'},
-                { loader: 'css-loader', options: {
-                    modules: true
-                }},
-                { loader: 'sass-loader' }
-            ]}
+            { test: /\.scss$/, include: path.join(__dirname, 'src/'), use: [
+                'style-loader',
+                // { loader: 'css-loader', options: {
+                //     modules: true
+                // }},
+                // { loader: 'sass-loader' },
+                {
+                    loader: 'typings-for-css-modules-loader',
+                    options: {
+                        modules: true,
+                        namedExport: true,
+                        sass: true,
+                        camelCase: true
+                    }
+                }
+            ]},
+            { test: /\.(png|svg|jpg|gif)$/, use: [{ loader: 'file-loader' }]}
         ]
     },
     plugins: [
