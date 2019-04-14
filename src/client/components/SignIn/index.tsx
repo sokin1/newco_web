@@ -1,8 +1,13 @@
 import * as React from 'react'
+import { Link } from 'react-router-dom'
 
-import * as styles from './enterPage.scss'
+import * as styles from './signIn.scss'
 
-export default class EnterPage extends React.Component<{}, {}> {
+export default class SignIn extends React.Component<{}, {}> {
+    handleSubmit = e => {
+        e.preventDefault()
+    }
+
     render() {
         const h2_style = {
             color: 'white'
@@ -17,17 +22,16 @@ export default class EnterPage extends React.Component<{}, {}> {
 
         return (
             <div className={styles.signin}>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <h2 style={h2_style}>Log In</h2>
                     <input type="text" name="username" placeholder="Username" />
                     <input type="password" name="pass" placeholder="Password" /><br /><br />
-                    <a href=""><input type="button" value="Log In" /></a><br /><br />
+                    <a href=""><input type="submit" value="Log In" /></a><br /><br />
                     <div id="container">
-                        <a href="#" style={a_style}>Reset Password</a>
                         <a href="#" style={a_style}>Forgot Password</a>
                     </div>
                     <br /><br /><br /><br /><br /><br />
-                    Don't have account?<a href="#">&nbsp;Sign Up</a>
+                    Don't have account?<Link to="/signup">&nbsp;Sign Up</Link>
                 </form>
             </div>
         );
