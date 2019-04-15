@@ -1,11 +1,17 @@
 import * as React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, RouteComponentProps } from 'react-router-dom'
 
 import * as styles from './signIn.scss'
 
-export default class SignIn extends React.Component<{}, {}> {
+interface IProps extends RouteComponentProps<any> {
+}
+
+export default class SignIn extends React.Component<IProps, {}> {
     handleSubmit = e => {
         e.preventDefault()
+
+        const { history } = this.props
+        history.push('/main')
     }
 
     render() {
